@@ -7,6 +7,9 @@ set number "con
 
 set wrap "cow
 
+"Hide the scrollbar on the right handside
+set guioptions-=r
+
 set nocompatible
 behave mswin
 set modelines=1
@@ -53,5 +56,5 @@ set hlsearch
 
 "backup, undo, and swap directory
 set undodir=$vim/tmp/undo//
-set backupdir=$vim/backup//
-set directory=$vim/swp//
+set backupdir=$vim/tmp/backup//
+set directory=$vim/tmp/swp//

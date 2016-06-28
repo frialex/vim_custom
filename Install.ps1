@@ -3,14 +3,27 @@
 
 #git clone frialex/ahk
 
-cd c:\vim
+#there should be a c:\vim\vim73 folder. Find Your VIM73!
+$vimBase = "C:\vim"
+
+cd $vimBase
 mkdir vimfiles
-
-mv fetch-plugins -> $vim/vimfiles/bundle
-#MOVE pathogen to $vim/vim74/autoload
-#create $vim/tmp/backup
-  #     $vim/tmp/swp
- #      $vim/tmp/undo
-#choco install python2-x86_32 -y
+mkdir tmp/backup
+mkdir tmp/swp
+mkdir tmp/undo
 
 
+git clone frialex/ahk
+
+mkdir $vimBase/vimfiles/bundle
+mv fetch-plugins -> $vimBase/vimfiles/bundle/fetch-plugins.ps1
+
+powershell -executionPolicy ByPass -File $vimBase/vimfiles/bundle/fetch-plugins.ps1
+
+mv $vimBase\vimfiles\bundle\vim-pathogen\autoload\pathogen.vim  $vimBase\vim73\autoload
+
+
+cd $vimBase
+#finally repoint
+rm _vimrc
+mv $vimBase\vim_custom\.vimrc $vimBase

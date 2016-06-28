@@ -3,16 +3,9 @@ Download latest patched vim ( Cream for vim )
 
 
 cd c:\vim\
+
 git clone https://github.com/frialex/vimrc.git
+
 cd vim_custom
+
 ./install.ps1
-
-
-
-
-
----Old directions bellow
-
-
-
-
